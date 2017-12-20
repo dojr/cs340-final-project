@@ -1,0 +1,30 @@
+<h1>MySQL CS340 Final Project: DJ Shamblin.</h1>
+
+<h3> Buttons below indicate inserting into a table and viewing entries.<br>
+     Search breweries or beers below for comments and user likes on beers (no likes for breweries).
+</h3> <br>
+
+
+<button><a href="/signup"> User </a></button>
+<button><a href="/beer"> Beer </a></button>
+<button><a href="/brewery"> Brewery </a></button>
+<button><a href="/comment"> Comment </a></button>
+<button><a href="/like"> Likes </a></button>
+<!-- <input list ="breweries" list ="beer" type="text" id="navbar-search-input" placeholder="Search brews or breweries..."> -->
+<p> Breweries </p>
+<select id="brew" name="brew_id">
+  {{#each getBrewery}}
+    <option value="{{brewID}}">{{brewName}}</option>
+  {{/each}}
+</select>
+
+<button onclick="getBrewData()" type="button" id="brew-search-button"><i class="fa fa-search"></i></button>
+
+<p>Beers</p>
+<select id="beer" name="beer_id">
+  {{#each getBeer}}
+    <option value="{{beerID}}">{{beerName}}</option>
+  {{/each}}
+</select>
+
+<button onclick="getBeerData()" type="button" id="beer-search-button"><i class="fa fa-search"></i></button>

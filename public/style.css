@@ -1,0 +1,33 @@
+
+html, body {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background-color: #eee;
+
+}
+
+a {
+  text-decoration: none;
+  color: #343434;
+}
+a:hover{
+
+}
+
+li{
+  list-style-type: none;
+}
+
+td{
+  border: 1px solid grey;
+}
+
+#navbar-search-input{
+  width: 200px;
+}
+
+#edit-comment {
+
+    width: 500px;
+}

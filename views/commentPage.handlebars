@@ -1,0 +1,124 @@
+<main>
+  {{#if beer}}
+
+  <table>
+    <thead>
+      <th>ID</th>
+      <th>Name</th>
+      <th>ibu</th>
+      <th>abv</th>
+      <th>Brewery</th>
+    </thead>
+    <tbody>
+      {{#each beer}}
+      <tr>
+          <td>{{beerID}}</td>
+          <td>{{beerName}}</td>
+          <td>{{ibu}}</td>
+          <td>{{abv}}%</td>
+          <td>{{brewName}}</td>
+      </tr>
+      {{/each}}
+
+    </tbody>
+
+        <table>
+
+              <thead>
+                <th>Comments</th>
+              </thead>
+              <tbody>
+                {{#each beerComment}}
+                <tr>
+                  <td>{{userName}}:</td>
+                  <td>{{beerText}}</td>
+                  <td><a href='/beer/{{beerID}}/{{comID}}'>Edit comment</a></td>
+
+                </tr>
+                {{/each}}
+              </tbody>
+          </table>
+
+  {{/if}}
+
+
+  {{#if brewery}}
+
+
+    {{#each brewery}}
+    <table>
+      <thead>
+        <th>ID</th>
+        <th>lattitude</th>
+        <th>Longitude</th>
+        <th>Name</th>
+        <th>Address</th>
+        <th>City</th>
+        <th>State</th>
+        <th>Number</th>
+        <th>Site</th>
+        <th>Description</th>
+      </thead>
+      <tbody>
+        <tr>
+            <td>{{brewID}}</td>
+            <td>{{lattitude}}</td>
+            <td>{{longitude}}</td>
+            <td>{{brewName}}</td>
+            <td>{{brew_address}}</td>
+            <td>{{brewCity}}</td>
+            <td>{{brewState}}</td>
+            <td>{{brewNumber}}</td>
+            <td>{{brewSite}}</td>
+            <td>{{brewScript}}</td>
+        </tr>
+      </tbody>
+    </table>
+
+    {{/each}}
+
+      <table>
+        <thead>
+          <th>Owned Beers:</th>
+        </thead>
+        <tbody>
+          {{#each brew_beers}}
+          <tr>
+              <td>{{beerName}}</td>
+          </tr>
+          {{/each}}
+        </tbody>
+      </table>
+
+        <table>
+            <thead>
+              <th>Comments</th>
+            </thead>
+            <tbody>
+              {{#each brewComment}}
+              <tr>
+                  <td>{{userName}}:</td>
+                  <td>{{brewText}}</td>
+                  <td><a href='/brew/{{brewID}}/{{comID}}'>Edit comment</a></td>
+              </tr>
+              {{/each}}
+            </tbody>
+          </table>
+
+  {{/if}}
+
+  {{#if user_like}}
+  <table>
+        <thead>
+          <th>Users that like this beer:</th>
+        </thead>
+        <tbody>
+          {{#each user_like}}
+            <tr>
+              <td>{{userName}}</td>
+            </tr>
+          {{/each}}
+        </tbody>
+    </table>
+  {{/if}}
+</main>

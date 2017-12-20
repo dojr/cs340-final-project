@@ -1,0 +1,66 @@
+
+<main>
+
+  <div>
+
+  <form action="/comment" method="post">
+    <div>
+      <div class="fields">
+        <div class="field">
+          <label>Name: </label>
+          defaulting comment to John Doe.
+        </div>
+      </div>
+
+      <div class="field">
+        <label>Comment: </label>
+        <input name="text" type="text" required="required">
+      </div>
+
+      <div class="field">
+        <label>Brewery Comment: </label>
+        <select name="brew_id">
+          {{#each getBrewery}}
+          <option value="{{brewID}}">{{brewName}}</option>
+          {{/each}}
+        </select>
+
+      </div>
+        <button type="submit">Submit</button>
+    </div>
+  </form>
+
+  </div>
+
+<br />
+
+  <form action="/comment" method="post">
+    <div>
+      <div class="fields">
+        <div class="field">
+          <label>Name: </label>
+          defaulting comment to John Doe.
+        </div>
+      </div>
+
+      <div class="field">
+        <label>Comment: </label>
+        <input name="text" type="text" required="required">
+      </div>
+
+      <div class="field">
+        <label>Beer Comment: </label>
+        <select name="beer_id">
+          {{#each getBeer}}
+            <option value="{{beerID}}">{{beerName}}</option>
+          {{/each}}
+        </select>
+
+      </div>
+        <button type="submit">Submit</button>
+    </div>
+  </form>
+
+  </div>
+
+</main>

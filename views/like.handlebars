@@ -1,0 +1,37 @@
+<h3> Table for user likes on beers: many-to-many relationship </h3>
+
+<div>
+  <form action="/like" method="post">
+    <div>
+      <div class="fields">
+
+        <select id="user" name="user_id">
+          {{#each getUsers}}
+            <option value="{{userID}}">{{user_fname}}</option>
+          {{/each}}
+        </select>
+
+        <select id="beer" name="beer_id">
+          {{#each getBeer}}
+            <option value="{{beerID}}">{{beerName}}</option>
+          {{/each}}
+        </select>
+
+      <button type="submit">Submit</button>
+    </div>
+  </form>
+
+  <table>
+        <thead>
+          <th>User</th>
+          <th>Likes</th>
+        </thead>
+        <tbody>
+          {{#each user_like}}
+            <tr>
+              <td>{{userName}}</td>
+              <td>{{beerName}}</td>
+            </tr>
+          {{/each}}
+        </tbody>
+    </table>

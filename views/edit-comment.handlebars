@@ -1,0 +1,17 @@
+{{#if beerID}}
+<h1> Edit Comment: <h1>
+<form id ="beer-com" action="/beer/{{beerID}}" method "post">
+<input id="edit-comment" type="text" name="text" value="{{comment.bText}}"></input>
+</form>
+
+<button onclick="updateBeerComment({{beerID}},{{comID}})"><i class="fa fa-pencil" aria-hidden="true"></i></button>
+{{/if}}
+
+{{#if brewID}}
+<h1> Edit Comment: <h1>
+<form id ="brew-com" action="/brew/{{brewID}}" method "post">
+<input id="edit-comment" type="text" name="text" value="{{comment.bText}}"></input>
+</form>
+
+<button onclick="updateBrewComment({{brewID}},{{comID}})"><i class="fa fa-pencil" aria-hidden="true"></i></button>
+{{/if}}

@@ -1,0 +1,63 @@
+
+<main>
+
+  <div class="beer-container">
+
+  <form action="/beer" method="post">
+    <div class="ui form">
+      <div class="fields">
+        <div class="field">
+          <label>Name: </label>
+          <input name="name" type="text" required="required">
+        </div>
+      </div>
+
+      <div class="field">
+        <label>IBU: </label>
+        <input name="ibu" type="text" required="required">
+      </div>
+
+      <div class="field">
+        <label>ABV (% value): </label>
+        <input name="abv" type="text" required="required">
+      </div>
+
+      <div class="field">
+        <label>Brewing Company: </label>
+        <select name="pid">
+          {{#each getBrewery}}
+          <option value="{{brewID}}">{{brewName}}</option>
+          {{/each}}
+        </select>
+      </div>
+        <button type="submit">Submit</button>
+    </div>
+  </form>
+  </div>
+
+  <table>
+    <thead>
+      <th>ID</th>
+      <th>Name</th>
+      <th>ibu</th>
+      <th>abv</th>
+      <th>Brewery</th>
+    </thead>
+    <tbody>
+      {{#each getBeer}}
+      <tr>
+          <td>{{beerID}}</td>
+          <td>{{beerName}}</td>
+          <td>{{ibu}}</td>
+          <td>{{abv}}%</td>
+          <td>{{brewName}}</td>
+
+          <td><button onclick="deleteBeer({{beerID}})">Delete</button></td>
+
+      </tr>
+      {{/each}}
+
+    </tbody>
+
+
+</main>
