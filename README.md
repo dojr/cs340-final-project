@@ -1,6 +1,13 @@
 # CS 340 Final Project
 
-This project entails the back-end implementation of social brewery website.
+This project entails the back-end implementation of social brewery website. 
+* Uses REST API (GET, PUT, POST, DELETE) in order to traverse the data. 
+* Node.js for handling the server.
+* Handlebars.js to handle templating.
+* MySQL for the database.
+* Ajax requests for deleting and updating data.
+* After the project I found csv files containing data for breweries and beers and used Python to manipulate the format.
+  I was able to incorporate the csv files into MySQL database for use in the website which I will put up soon.
 
 ## Brewery
 
